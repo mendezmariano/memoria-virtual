@@ -1,4 +1,5 @@
 import { hex, parseAddress } from './memory.js';
+import { mmuStartContent } from './mmu-view.js';
 import {
   OFFSET_BITS,
   SEGMENT_BITS,
@@ -46,7 +47,8 @@ $('#app').innerHTML = `
 `;
 
 function mmuCard(current) {
-  return `<article class="seg-card seg-mmu-card ${current?.key === 'start' ? 'seg-component-active component-enter' : ''}" aria-label="MMU y registro STBR"><div class="tlb-mmu-chip" role="img" aria-label="Unidad de gestión de memoria"><i></i><strong>MMU</strong><i></i></div><h3>Unidad de gestión de memoria</h3><p>La traducción empieza acá.</p><div class="seg-register-box"><span>STBR</span><code>${hex(STBR)}</code></div><span class="node-footnote">Base física de la tabla de segmentos</span></article>`;
+  const active = current?.key === 'start';
+  return `<article class="cpu-node mmu-start-card seg-mmu-card ${active ? 'seg-component-active component-enter' : ''}" aria-label="MMU y registro STBR">${mmuStartContent({ register: 'STBR', value: hex(STBR), footnote: 'Base física de la tabla de segmentos', focus: active, registerClass: 'seg-register-box' })}</article>`;
 }
 
 function addressStrip(current) {

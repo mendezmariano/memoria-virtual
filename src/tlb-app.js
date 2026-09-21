@@ -1,4 +1,5 @@
 import { CR3, PAGE_SIZE, hex, memory, parseAddress } from './memory.js';
+import { mmuStartContent } from './mmu-view.js';
 import { createTlb, planTlbTranslation, preloadTlb } from './tlb.js';
 import { simulationMenu, bindSimulationMenu } from './navigation.js';
 
@@ -76,7 +77,8 @@ $('#app').innerHTML = `
 `;
 
 function mmuCard(current) {
-  return `<article class="tlb-card tlb-mmu-card ${current?.key === 'start' ? 'tlb-component-active component-enter' : ''}" aria-label="MMU y registro CR3"><div class="tlb-mmu-chip" role="img" aria-label="Unidad de gestión de memoria"><i></i><strong>MMU</strong><i></i></div><h3>Unidad de gestión de memoria</h3><p>La traducción empieza acá.</p><div class="cr3-box"><span>CR3</span><code>${hex(CR3)}</code></div><span class="node-footnote">Base física del Page Directory</span></article>`;
+  const active = current?.key === 'start';
+  return `<article class="cpu-node mmu-start-card tlb-mmu-card ${active ? 'tlb-component-active component-enter' : ''}" aria-label="MMU y registro CR3">${mmuStartContent({ register: 'CR3', value: hex(CR3), footnote: 'Base física del directorio', focus: active })}</article>`;
 }
 
 function cacheCard(current) {

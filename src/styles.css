@@ -282,15 +282,7 @@ dialog{border:var(--border);border-radius:12px;box-shadow:7px 7px 0 #29282e;max-
 .tlb-cache td { white-space: nowrap; }
 .tlb-match { background: #ffedaa; font-weight: 800; }
 .tlb-card-note { padding: 8px 10px; margin: 0; font-size: 10px; color: #6b6356; line-height: 1.5; }
-.tlb-mmu-card { align-self: center; padding: 14px; text-align: center; overflow: visible; }
-.tlb-mmu-card h3 { margin: 9px 0 3px; font-family: 'Barlow Condensed', sans-serif; font-size: 21px; }
-.tlb-mmu-card p { margin: 0 0 10px; color: #746d61; font-size: 10px; }
-.tlb-mmu-card .cr3-box { margin-bottom: 7px; }
-.tlb-mmu-chip { width: 112px; height: 72px; margin: 0 auto; border: 2px solid var(--ink); border-radius: 9px; display: grid; place-items: center; position: relative; background: #b9a2df; box-shadow: 4px 4px 0 #d8d0c0; }
-.tlb-mmu-chip strong { font: 800 28px 'Barlow Condensed', sans-serif; }
-.tlb-mmu-chip i { position: absolute; left: -10px; right: -10px; height: 8px; border-left: 7px dotted var(--ink); border-right: 7px dotted var(--ink); }
-.tlb-mmu-chip i:first-child { top: 13px; }
-.tlb-mmu-chip i:last-child { bottom: 13px; }
+.tlb-mmu-card { align-self: center; overflow: visible; }
 .tlb-walk { min-width: 0; display: flex; flex-direction: column; justify-content: center; gap: 6px; }
 .tlb-walk-summary { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 0 2px; min-height: 30px; }
 .tlb-walk-summary.tlb-component-active { padding: 4px 7px; border: 1px solid var(--ink); border-radius: 6px; background: #fff3bc; box-shadow: 0 0 0 4px #ffdf50; }
@@ -748,13 +740,7 @@ label, .step-button, .step-number { font-size: 12px; }
 .seg-badge { flex-shrink: 0; padding: 4px 7px; border: 1px solid #9b8c71; border-radius: 20px; background: #fffdf3; font-size: 9px; white-space: nowrap; }
 .seg-badge.ok { border-color: #61944d; background: #dceecd; }
 .seg-badge.fault { border-color: #bd6a54; background: #ffd9ce; }
-.seg-mmu-card { align-self: center; padding: 12px; overflow: visible; text-align: center; }
-.seg-mmu-card h3 { margin: 8px 0 3px; font: 800 20px 'Barlow Condensed', sans-serif; }
-.seg-mmu-card p { margin: 0 0 9px; color: #746d61; font-size: 10px; }
-.seg-mmu-card .tlb-mmu-chip { width: 104px; height: 62px; }
-.seg-register-box { display: flex; width: 168px; max-width: 100%; margin: 0 auto 7px; overflow: hidden; border: 1.5px solid var(--ink); border-radius: 4px; background: #fffaf0; }
-.seg-register-box span { padding: 7px 8px; border-right: 1.5px solid var(--ink); background: #e4d0f1; font-size: 11px; font-weight: 800; }
-.seg-register-box code { display: grid; flex: 1; place-items: center; font-size: 10px; }
+.seg-mmu-card { align-self: center; overflow: visible; text-align: center; }
 .seg-table-card { display: flex; flex-direction: column; align-self: center; }
 .seg-table-card table { table-layout: fixed; }
 .seg-table-card th { padding: 6px 5px; font-size: 9px; text-align: center; }
@@ -842,10 +828,6 @@ label, .step-button, .step-number { font-size: 12px; }
 }
 @media (min-width: 1024px) and (min-height: 620px) and (max-height: 700px) {
   .seg-mmu-card { padding: 7px; }
-  .seg-mmu-card .tlb-mmu-chip { width: 82px; height: 38px; }
-  .seg-mmu-card h3 { margin: 3px 0; font-size: 16px; }
-  .seg-mmu-card p { display: none; }
-  .seg-register-box span { padding: 4px 6px; }
   .seg-table-card td, .seg-table-card td:first-child { height: 18px; }
   .seg-table-foot { font-size: 8px; }
   .seg-check { padding: 3px 6px; }
