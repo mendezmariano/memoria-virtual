@@ -1,5 +1,5 @@
 export function simulationMenu(mode) {
-  return `<select id="simulation-menu" aria-label="Seleccionar simulación"><option value="paging" ${mode === 'paging' ? 'selected' : ''}>Paginación</option><option value="tlb" ${mode === 'tlb' ? 'selected' : ''}>Paginación con TLB</option></select>`;
+  return `<select id="simulation-menu" aria-label="Seleccionar simulación"><option value="paging" ${mode === 'paging' ? 'selected' : ''}>Paginación</option><option value="tlb" ${mode === 'tlb' ? 'selected' : ''}>Paginación con TLB</option><option value="segmentation" ${mode === 'segmentation' ? 'selected' : ''}>Segmentación</option></select>`;
 }
 
 export function bindSimulationMenu(stop) {
@@ -7,6 +7,7 @@ export function bindSimulationMenu(stop) {
     stop();
     const url = new URL(window.location.href);
     if (event.target.value === 'tlb') url.searchParams.set('sim', 'tlb');
+    else if (event.target.value === 'segmentation') url.searchParams.set('sim', 'segmentation');
     else url.searchParams.delete('sim');
     url.hash = '';
     window.location.assign(url.href);
