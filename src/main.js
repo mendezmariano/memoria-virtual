@@ -4,6 +4,8 @@ if (simulation === 'tlb') {
   await import('./tlb-app.js');
 } else if (simulation === 'segmentation') {
   await import('./segmentation-app.js');
+} else if (simulation === 'riscv') {
+  await import('./riscv-app.js');
 } else {
   await import('./app.js');
 }
