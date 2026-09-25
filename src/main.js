@@ -6,6 +6,8 @@ if (simulation === 'tlb') {
   await import('./segmentation-app.js');
 } else if (simulation === 'riscv') {
   await import('./riscv-app.js');
+} else if (simulation === 'x64') {
+  await import('./x64-app.js');
 } else {
   await import('./app.js');
 }

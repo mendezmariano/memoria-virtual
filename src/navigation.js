@@ -1,5 +1,5 @@
 export function simulationMenu(mode) {
-  return `<select id="simulation-menu" aria-label="Seleccionar simulación"><option value="paging" ${mode === 'paging' ? 'selected' : ''}>Paginación</option><option value="tlb" ${mode === 'tlb' ? 'selected' : ''}>Paginación con TLB</option><option value="segmentation" ${mode === 'segmentation' ? 'selected' : ''}>Segmentación</option><option value="riscv" ${mode === 'riscv' ? 'selected' : ''}>RISC-V · xv6</option></select>`;
+  return `<select id="simulation-menu" aria-label="Seleccionar simulación"><option value="paging" ${mode === 'paging' ? 'selected' : ''}>Paginación</option><option value="tlb" ${mode === 'tlb' ? 'selected' : ''}>Paginación con TLB</option><option value="segmentation" ${mode === 'segmentation' ? 'selected' : ''}>Segmentación</option><option value="riscv" ${mode === 'riscv' ? 'selected' : ''}>RISC-V · xv6</option><option value="x64" ${mode === 'x64' ? 'selected' : ''}>Paginación x86-64</option></select>`;
 }
 
 export function bindSimulationMenu(stop) {
@@ -9,6 +9,7 @@ export function bindSimulationMenu(stop) {
     if (event.target.value === 'tlb') url.searchParams.set('sim', 'tlb');
     else if (event.target.value === 'segmentation') url.searchParams.set('sim', 'segmentation');
     else if (event.target.value === 'riscv') url.searchParams.set('sim', 'riscv');
+    else if (event.target.value === 'x64') url.searchParams.set('sim', 'x64');
     else url.searchParams.delete('sim');
     url.hash = '';
     window.location.assign(url.href);
